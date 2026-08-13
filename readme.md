@@ -18,17 +18,19 @@ A lightweight, zero-dependency Bash script for finding Git SemVer tags (starting
 
 ## Installation
 
-1. Download or copy `versions-finder.sh` into your repository or system path:
+A. Run the installer
 
 ```bash
-chmod +x versions-finder.sh
+curl -L https://raw.githubusercontent.com/neblabs/versions-finder/main/bin/install.sh | sh
 
 ```
 
-2. *(Optional)* Move it to your local path for global execution:
+B. ...Or install it manually
 
 ```bash
-mv versions-finder.sh /usr/local/bin/versions-finder
+sudo curl -sSL https://raw.githubusercontent.com/neblabs/versions-finder/main/versions-finder.sh -o "$HOME"/.local/bin/versions-finder
+
+sudo chmod +x "$HOME"/.local/bin/versions-finder
 
 ```
 
