@@ -100,7 +100,8 @@ If running this inside github actions make sure your checked out repo has enough
 ```yaml
 - name: Fetch Git Tags
   run: git fetch --tags
-```bash
+```
+
 ---
 
 ## License
