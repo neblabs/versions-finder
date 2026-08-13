@@ -32,6 +32,7 @@ sudo curl -sSL https://raw.githubusercontent.com/neblabs/versions-finder/main/ve
 
 sudo chmod +x "$HOME"/.local/bin/versions-finder
 
+# and make sure ~/.local/bin/ is in your PATH.
 ```
 
 ---
@@ -71,18 +72,18 @@ versions-finder <version_type> [option]
 
 ```bash
 # List all stable versions
-./versions-finder.sh stable
+versions-finder stable
 
 # Get the latest stable release
-./versions-finder.sh stable --latest
+versions-finder stable --latest
 # Output: v2.1.0
 
 # Get the latest release candidate
-./versions-finder.sh rc --latest
+versions-finder rc --latest
 # Output: v2.2.0-rc1
 
 # Get the last 3 stable releases
-./versions-finder.sh stable --limit 3
+versions-finder stable --limit 3
 
 ```
 
@@ -90,5 +91,5 @@ versions-finder <version_type> [option]
 
 ## Notes
 
-Exits with 1 when no versions could be found for the given arguments. For example, calling ./versions-finder.sh stable --previous on a new repo wth only one initial tag will exit with a status of 1
+Exits with 1 when no versions could be found for the given arguments. For example, calling versions-finder stable --previous on a new repo wth only one initial tag will exit with a status of 1.
 
