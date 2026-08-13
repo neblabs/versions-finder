@@ -93,6 +93,14 @@ versions-finder stable --limit 3
 
 Exits with 1 when no versions could be found for the given arguments. For example, calling versions-finder stable --previous on a new repo wth only one initial tag will exit with a status of 1.
 
+### Github Actions
+
+If running this inside github actions make sure your checked out repo has enough tags. Set fetch depth: 0 on actions/checkout or try fetching all the tags
+
+```yaml
+- name: Fetch Git Tags
+  run: git fetch --tags
+```bash
 ---
 
 ## License
