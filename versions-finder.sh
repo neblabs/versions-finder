@@ -7,7 +7,7 @@
 
 
 function print-usage() {
-    echo "Usage: $0 <any|stable|unstable|beta|alpha|rc> [--(any|l) | --(latest|l) | --(previous|p) | --(limit|n) n]" 1>&2
+    echo "Usage: $0 <any|stable|unstable|beta|alpha|rc> [--(any|a) | --(latest|l) | --(previous|p) | --(limit|n) n]" 1>&2
     exit 1
 }
 
@@ -49,6 +49,7 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
+# defaults to any
 pattern="^v[0-9]+\.[0-9]+\.[0-9]+"
 
 case $version_type in
