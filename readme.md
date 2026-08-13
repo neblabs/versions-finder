@@ -93,3 +93,9 @@ versions-finder stable --limit 3
 
 Exits with 1 when no versions could be found for the given arguments. For example, calling versions-finder stable --previous on a new repo wth only one initial tag will exit with a status of 1.
 
+---
+
+## License
+
+MIT
+
