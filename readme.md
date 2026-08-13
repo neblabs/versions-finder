@@ -45,9 +45,9 @@ versions-finder <version_type> [option]
 
 | Type | Description | Match Example |
 | --- | --- | --- |
-| `all` | Matches all SemVer formatted tags (`vX.Y.Z*`) | `v1.0.0`, `v1.0.1-rc1`, `v1.0.1-beta-1` |
+| `any` | Matches all SemVer formatted tags (`vX.Y.Z*`) | `v1.0.0`, `v1.0.1-rc1`, `v1.0.1-beta-1` |
 | `stable` | Strictly stable SemVer releases | `v1.0.0`, `v2.4.12` |
-| `unstable` | Any tag containing a pre-release suffix | `v1.0.0-rc.1`, `v2.0.0-beta2` |
+| `unstable` | Any tag containing a pre-release suffix in the format vX.Y.Z-*  | `v1.0.0-rc.1`, `v2.0.0-beta2` |
 | `rc` | Release candidate tags only | `v1.0.1-rc-1` |
 | `beta` | Beta tags only | `v1.0.0-beta.2` |
 | `alpha` | Alpha tags only | `v1.0.0-alpha1` |
@@ -56,7 +56,7 @@ versions-finder <version_type> [option]
 
 | Flag | Short | Description |
 | --- | --- | --- |
-| `--all` | `-a` | Output all matching tags (default) |
+| `--any` | `-a` | Output all matching tags (default) |
 | `--latest` | `-l` | Return only the single newest matching tag |
 | `--previous` | `-p` | Return only the second newest matching tag (outputs empty if no previous tag exists) |
 | `--limit <n>` | `-n <n>` | Limit output to top `n` matching tags |
