@@ -63,6 +63,7 @@ versions-finder <version_type> [option]
 | `--latest` | `-l` | Return only the single newest matching tag |
 | `--previous` | `-p` | Return only the second newest matching tag (outputs empty if no previous tag exists) |
 | `--limit <n>` | `-n <n>` | Limit output to top `n` matching tags |
+| `----output-strict-semver` | n/a | outputs X.X.X versions instead of the default vX.X.X |
 
 ---
 
