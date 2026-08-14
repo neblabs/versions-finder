@@ -1,6 +1,6 @@
 # versions-finder
 
-A lightweight, zero-dependency Bash script for finding Git SemVer tags (starting with v) in development workflows and CI/CD pipelines. Manually written :)
+A lightweight, zero-dependency Bash script for finding Git SemVer tags (starting with v) from the *current/local* repository. Super useful in development workflows and CI/CD pipelines. Manually written :)
 
 ## Use cases
 - find the latest stable version
