@@ -18,7 +18,7 @@ if ! [[ "$targetDir" == *"/.local/bin"* ]]; then
     echo [warn] Installed to "$targetFilePath" but it "doesn't" seem to be in your PATH.
 fi
 
-if ! $addInstaller; then
+if $addInstaller; then
     # also install the installer, good for updates
     curl -sSL  https://raw.githubusercontent.com/neblabs/versions-finder/main/install.sh -o "$installerTargetFilePath"
 
