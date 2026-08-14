@@ -21,7 +21,7 @@ A lightweight, zero-dependency Bash script for finding Git SemVer tags (starting
 A. Run the installer
 
 ```bash
-curl -L https://raw.githubusercontent.com/neblabs/versions-finder/main/bin/install.sh | sh
+curl -L https://raw.githubusercontent.com/neblabs/versions-finder/main/install.sh | sh
 
 ```
 
