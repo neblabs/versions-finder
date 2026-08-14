@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-targetDir=$HOME/.local/bin
-targetFilePath=$HOME/.local/bin/versions-finder
+addInstaller=${1:-true}
+targetDir=${2:-$HOME/.local/bin}
+targetFilePath=$targetDir/versions-finder
+installerTargetFilePath=$targetDir/versions-finder-installer
 
 # first make sure the target dir exists
 mkdir -p "$targetDir"
@@ -14,3 +16,13 @@ sudo chmod +x "$targetFilePath"
 if ! [[ "$targetDir" == *"/.local/bin"* ]]; then
     echo [warn] Installed to "$targetFilePath" but it "doesn't" seem to be in your PATH.
 fi
+
+if [[ $addInstaller ]]; then
+    # also install the installer, good for updates
+    curl -sSL  https://raw.githubusercontent.com/neblabs/versions-finder/main/installer.sh -o "$installerTargetFilePath"
+
+    sudo chmod +x "$installerTargetFilePath"
+fi
+
+
+
