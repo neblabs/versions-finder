@@ -59,9 +59,10 @@ versions-finder <version_type> [option]
 
 | Flag | Short | Description |
 | --- | --- | --- |
-| `--any` | `-a` | Output all matching tags (default) |
+| `--all` | `-a` | Output all matching tags (default) |
 | `--latest` | `-l` | Return only the single newest matching tag |
 | `--previous` | `-p` | Return only the second newest matching tag (outputs empty if no previous tag exists) |
+| `--previous-or-latest` | n/a | Return previous tag or the latest if no previous |
 | `--limit <n>` | `-n <n>` | Limit output to top `n` matching tags |
 | `----output-strict-semver` | n/a | outputs X.X.X versions instead of the default vX.X.X |
 

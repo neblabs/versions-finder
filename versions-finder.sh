@@ -7,7 +7,7 @@
 
 
 function print-usage() {
-    echo "Usage: $0 <any|stable|unstable|beta|alpha|rc> [--(any|a) | --(latest|l) | --(previous|p) | --(limit|n) n] [--output-strict-semver]" 1>&2
+    echo "Usage: $0 <any|stable|unstable|beta|alpha|rc> [--(all|a) | --(latest|l) | --(previous|p) | --previous-or-latest | --(limit|n) n] [--output-strict-semver]" 1>&2
     exit 1
 }
 
@@ -25,7 +25,7 @@ fi
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        --any|-a)
+        --all|-a)
             limit=unlimited
             shift
         ;;
@@ -35,6 +35,10 @@ while [[ $# -gt 0 ]]; do
         ;;
         --previous|-p)
             limit=previous
+            shift
+        ;;
+        --previous-or-latest)
+            limit=previous-or-latest
             shift
         ;;
         --limit|-n)
@@ -81,15 +85,23 @@ fetch-tags() {
     done;
 }
 
+fetch-latest() {
+    fetch-tags | head -n 1
+}
+
 case $limit in
     unlimited)
         fetch-tags
     ;;
     latest)
-        fetch-tags | head -n 1
+        fetch-latest
     ;;
-    previous)
+    previous*)
         if [[ $(fetch-tags | wc -l) -lt 2 ]]; then
+            if [[ "$limit" == previous-or-latest ]]; then
+                # then just try getting the latest
+                fetch-latest
+            fi
             exit 1
         fi
         fetch-tags | head -n 2 | tail -n 1
