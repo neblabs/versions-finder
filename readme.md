@@ -72,17 +72,40 @@ versions-finder <version_type> [option]
 
 ### Basic Tag Queries
 
+Giving the following tags:
+
+````
+...
+v1.9.1 
+v1.9.2 
+v1.9.2-beta.1 
+````
+
 ```bash
+# Get the absolutely latest version semantically
+versions-finder any --latest
+# v1.9.2: 1.9.2 is a higher version than 1.9.2-beta.1
+
 # List all stable versions
 versions-finder stable
+# output: 
+# v1.9.1
+# v1.9.2
 
 # Get the latest stable release
 versions-finder stable --latest
-# Output: v2.1.0
+# output: 
+# v1.9.2
+
+# Get the latest unstable release
+versions-finder unstable --latest
+# output: 
+# v1.9.2-beta.1
 
 # Get the latest release candidate
-versions-finder rc --latest
-# Output: v2.2.0-rc1
+versions-finder beta --latest
+# output: 
+# v1.9.2-beta.1
 
 # Get the last 3 stable releases
 versions-finder stable --limit 3
