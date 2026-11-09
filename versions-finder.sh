@@ -77,7 +77,7 @@ esac
 
 
 fetch-tags() {
-    (git tag --sort=-v:refname | grep -E "$pattern" || exit 1) | while read -r version || [[ -n "$version" ]]; do
+    (git -c versionsort.suffix=-alpha -c versionsort.suffix=-beta -c versionsort.suffix=-rc  -c versionsort.suffix=- tag --sort=-v:refname | grep -E "$pattern" || exit 1) | while read -r version || [[ -n "$version" ]]; do
         if $outputStrictSemver && [[ "$version" =~ ^v ]]; then
             version="${version:1}"
         fi
